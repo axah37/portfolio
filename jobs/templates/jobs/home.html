@@ -1,0 +1,34 @@
+{% extends "jobs/header.html " %}
+{% block content %}
+    <main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Hi I'm Abdurahman</h1>
+          <p class="lead text-muted">Welcome, my name is Abdurahman Ahmed. I am working to improve my software development skills including Web Dev, App Dev, and Databases.</p>
+          <p>
+            <a href="mailto:abdahmed@live.com" class="btn btn-primary my-2">Email Me</a>
+          </p>
+        </div>
+      </section>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+
+          <div class="row">
+            {% for job in jobs.all %}
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="{{job.image.url}}" alt="">
+                <div class="card-body">
+                  <p class="card-text">{{job.summary}}</p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+    </main>
+{% endblock %}
