@@ -1,4 +1,57 @@
 {% extends "jobs/header.html " %}
 {% block content %}
-Contact Page
+<div class="container">
+  <br/>
+  {% if success%}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Succefully sent email</strong>—Keep an eye on you inbox for a response!
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {%endif%}
+  <h1 class="text-center">Contact Me</h1>
+  <br/>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <p class="text-center">You can use this form to contact me regarding any of my previous projects, questions, or employment oppertunities. You can also reach me on my following social media accounts!</p>
+    </div>
+    <div class="col-md-8" style="font-size: 50px;">
+      <p class="text-center">
+        <a href="https://www.linkedin.com/in/abdurahman-ahmed-7b0a88a4"><i class="fab fa-linkedin" style="color: #4875B4;"></i></a>
+        <a href="https://github.com/ahmeda37"><i class="fab fa-github" style="color:#211f1f;"></i></a>
+        <a href="https://twitter.com/Sand_Pirate"><i class="fab fa-twitter" style="color:#33CCFF;"></i></a>
+      </p>
+    </div>
+  </div>
+  <hr/>
+  <form method="post">
+    {% csrf_token %}
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" class="form-control" id="email" name="from_email" required>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" class="form-control" id="subject" name="subject" required>
+        </div>
+      </div>
+        <div class="col-md-8">
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea class="form-control" id="message" name="message" required cols="40" rows="5"></textarea>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="form-actions">
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
 {% endblock %}
