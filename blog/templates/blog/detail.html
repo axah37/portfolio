@@ -1,0 +1,15 @@
+{% extends "jobs/header.html " %}
+{% block content %}
+
+<div class="container">
+	<br/>
+	<h2 class="text-center">{{blog.title}}</h2>
+	<small class="text-muted">{{blog.date|date:"Y-m-d"}}</small>
+	<br/>
+	<img class="img-fluid" src="{{blog.image.url}}" alt="...">
+	<hr/>
+	<p>{{blog.body}}</p>
+	<br/>
+	<a class="btn btn-secondary float-right" href="{% url 'blog_home'%}">Go Back</a>
+</div>
+{% endblock %}

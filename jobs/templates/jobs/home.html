@@ -1,7 +1,7 @@
 {% extends "jobs/header.html " %}
 {% block content %}
     <main role="main">
-
+      {% load staticfiles %}
       <section class="jumbotron text-center">
         <div class="container">
           <h1 class="jumbotron-heading">Hi I'm Abdurahman</h1>
@@ -9,6 +9,7 @@
           <p>
             <a href="mailto:abdahmed@live.com" class="btn btn-primary my-2">Email Me</a>
           </p>
+          <img src="{% static 'headshot.jpg' %}" height="300px">
         </div>
       </section>
 
