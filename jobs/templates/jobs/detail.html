@@ -1,0 +1,14 @@
+{% extends "jobs/header.html " %}
+{% block content %}
+<div class="container">
+	<br/>
+	<h2 class="text-center">{{job.title}}</h2>
+	<small class="text-muted">{{job.date|date:"Y-m-d"}}</small>
+	<br/>
+	<img class="img-fluid" src="{{job.image.url}}" alt="...">
+	<hr/>
+	<p>{{job.summary}}</p>
+	<br/>
+	<a class="btn btn-secondary float-right" href="{% url 'jobs_home'%}">Go Back</a>
+</div>
+{% endblock %}
