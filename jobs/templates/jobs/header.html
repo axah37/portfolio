@@ -43,6 +43,10 @@
                                       active
                                       {% endif %}
                                       " href="{% url 'blog_home'%}">Blog</a>
+          <a class="nav-item nav-link {% if active_page == 'contact' %}
+                                      active
+                                      {% endif %}
+                                      " href="{% url 'contact_home'%}">Contact</a>
 		    </div>
 		  </div>
 		</nav>

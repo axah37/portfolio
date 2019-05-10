@@ -21,6 +21,8 @@ import jobs.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('jobs.urls')),
+    path('', jobs.views.home, name='home'),
+    path('jobs/', include('jobs.urls')),
     path('blog/', include('blog.urls')),
+    path('contact/',include('contact.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
