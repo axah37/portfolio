@@ -7,7 +7,7 @@
 	<br/>
 	<img class="img-fluid" src="{{job.image.url}}" alt="...">
 	<hr/>
-	<p>{{job.summary}}</p>
+	<p>{{job.summary|safe|linebreaks}}</p>
 	<br/>
 	<a class="btn btn-secondary float-right" href="{% url 'jobs_home'%}">Go Back</a>
 </div>

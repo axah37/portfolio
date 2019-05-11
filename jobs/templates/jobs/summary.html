@@ -13,7 +13,11 @@
 		  <div class="card-body">
 		    <a href="{% url 'jobs_detail' job.id%}"><h5 class="card-title">{{job.title}}</h5></a>
 		    <small class="text-muted">{{job.date|date:"Y-m-d"}}</small>
-		    <p class="card-text">{{job.summary}}</p>
+		    <p class="card-text">{{job.big_blurp|safe|linebreaks}}
+		    	{% if job.read_more_s %}
+		    	 ...<a href="{% url 'jobs_detail' job.id%}">(Read More)</a>
+		    	{% endif %}
+		    </p>
 		  </div>
 		</div>
 		{% endfor %}

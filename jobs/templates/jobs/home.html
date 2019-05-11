@@ -24,7 +24,11 @@
                 <img class="card-img-top" src="{{job.image.url}}" alt="">
                 <div class="card-body">
                   <a href="{% url 'jobs_detail' job.id%}"><h5 class="card-title text-center">{{job.title}}</h5></a>
-                  <p class="card-text">{{job.summary}}</p>
+                  <p class="card-text">{{job.blurp|safe|linebreaks}}
+                    {% if job.read_more_s %}
+                     ...<a href="{% url 'jobs_detail' job.id%}">(Read More)</a>
+                    {% endif %}
+                  </p>
                 </div>
               </div>
             </div>

@@ -10,3 +10,21 @@ class Job(models.Model):
 
 	def __str__(self):
 		return self.title
+
+	def blurp(self):
+		return self.summary[:200]
+		
+
+	def big_blurp(self):
+		return self.summary[:400]
+
+	
+	def read_more_s(self):
+		if len(self.summary) > 400:
+			return True
+		return False
+
+	def read_more(self):
+		if len(self.summary) > 200:
+			return True
+		return False

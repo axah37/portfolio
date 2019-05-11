@@ -13,7 +13,11 @@
 		  <img class="img-fluid" src="{{blog.image.url}}" class="card-img-top" alt="...">
 		  <div class="card-body">
 		    <a href="{% url 'blog_detail' blog.id%}"><h5 class="card-title">{{blog.title}}</h5></a>
-		    <p class="card-text">{{blog.summary}}</p>
+		    <p class="card-text">{{blog.summary|safe|linebreaks}}
+		    	{% if blog.read_more %}
+                 ...<a href="{% url 'blog_detail' blog.id%}">(Read More)</a>
+                {% endif %}
+		    </p>
 		    <p class="card-text"><small class="text-muted">{{blog.date|date:"Y-m-d"}}</small></p>
 		  </div>
 		</div>

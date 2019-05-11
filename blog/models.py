@@ -12,5 +12,9 @@ class Blog(models.Model):
 		return self.title
 
 	def summary(self):
-		return self.body[:100]
+		return self.body[:400]
 
+	def read_more(self):
+		if len(self.body) > 400:
+			return True
+		return False
