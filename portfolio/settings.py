@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '56@1wj2qv)jj-0o^+^@c9!ye(!#81_!@@#=yeq&=rpwcoa5x_%'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -79,9 +79,9 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.postgresql',
-        'NAME':'portfoliodb',
-        'USER':'postgres',
-        'PASSWORD':'2208',
+        'NAME':'',
+        'USER':'',
+        'PASSWORD':'',
         'HOST':'localhost',
         'PORT':'5432',
     }
@@ -137,9 +137,14 @@ MEDIA_URL = '/media/'
 
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = ''
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'ahmeda90210@gmail.com'
-EMAIL_HOST_PASSWORD = 'abdi2012'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = True
 #EMAIL_USE_SSL = ''
+
+try:
+    from .local_settings import *
+except ImportError:
+    raise
